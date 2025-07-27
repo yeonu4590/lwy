@@ -1,0 +1,82 @@
+.page {
+  background: #0d0d0d;
+  color: #fff;
+  min-height: 100vh;
+  padding: 3rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  text-align: center;
+}
+
+.logo {
+  border-radius: 9999px;
+  border: 2px solid #444;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.linkBox {
+  background: #1a1a1a;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  text-align: left;
+  border-left: 4px solid #444;
+}
+
+.label {
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ddd;
+}
+
+.address {
+  font-family: monospace;
+  background: #111;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
+  color: #00ffcc;
+  font-size: 0.95rem;
+  padding-bottom: 10px;
+}
+
+.addresssde {
+  font-family: monospace;
+  background: #111;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  display: inline-block;
+  color: #a200ff;
+  font-size: 0.95rem;
+}
+
+.footer {
+  margin-top: auto;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
