@@ -6,63 +6,6 @@ import styles from './page.module.css';
 import { Globe, Gamepad2, Code, Server } from 'lucide-react';
 
 export default function Home() {
-  const [globedCount, setGlobedCount] = useState(null);
-  const [globedStatus, setGlobedStatus] = useState('로딩 중...');
-  const [globedPing, setGlobedPing] = useState(null);
-  const [smpCount, setSmpCount] = useState(null);
-  const [smpStatus, setSmpStatus] = useState('로딩 중...');
-  const [smpPing, setSmpPing] = useState(null);
-
-  useEffect(() => {
-    fetch('/api/ping-globed')
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.alive) setGlobedPing(data.time);
-      });
-
-    fetch('http://118.44.109.38/public/players?period=minute')
-      .then((res) => {
-        if (!res.ok) throw new Error('응답 오류');
-        return res.json();
-      })
-      .then((data) => {
-        const arr = data.data;
-        const latest = arr[arr.length - 1];
-        if (latest && typeof latest.count === 'number') {
-          setGlobedCount(latest.count);
-          setGlobedStatus('온라인');
-        } else {
-          setGlobedStatus('데이터 없음');
-        }
-      })
-      .catch(() => {
-        setGlobedStatus('오프라인 또는 응답 없음');
-      });
-
-    fetch('/api/ping-smp')
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.alive) setSmpPing(data.time);
-      });
-
-    fetch('https://api.mcsrvstat.us/2/smp.lyw.kr')
-      .then((res) => {
-        if (!res.ok) throw new Error('응답 오류');
-        return res.json();
-      })
-      .then((data) => {
-        if (data.players && typeof data.players.online === 'number') {
-          setSmpCount(data.players.online);
-          setSmpStatus(data.online ? '온라인' : '오프라인');
-        } else {
-          setSmpStatus('데이터 없음');
-        }
-      })
-      .catch(() => {
-        setSmpStatus('오프라인 또는 응답 없음');
-      });
-  }, []);
-
   return (
     <div className={styles.page}>
       <main className={styles.main}>
@@ -86,11 +29,6 @@ export default function Home() {
             <span className={styles.label}>마인크래프트 SMP 서버</span>
             <code className={styles.address}>smp.lyw.kr</code>
             <p className={styles.description}>그냥평범한생야생</p>
-            <p className={`${styles.status} ${smpStatus === '온라인' ? styles.online : styles.offline}`}>
-              상태: {smpStatus}
-              {smpCount !== null && ` (접속자: ${smpCount}명)`}
-              {smpPing !== null && ` (핑: ${smpPing}ms)`}
-            </p>
           </div>
 
           <div className={styles.linkBox}>
@@ -100,11 +38,6 @@ export default function Home() {
               [웹사이트] (필독)
             </a>
             <p className={styles.description}>유일한 globed한국서버</p>
-            <p className={`${styles.status} ${globedStatus === '온라인' ? styles.online : styles.offline}`}>
-              상태: {globedStatus}
-              {globedCount !== null && ` (접속자: ${globedCount}명)`}
-              {globedPing !== null && ` (핑: ${globedPing}ms)`}
-            </p>
           </div>
         </section>
 
