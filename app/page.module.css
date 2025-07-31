@@ -1,128 +1,164 @@
 .page {
-  background: linear-gradient(to bottom, #111, #1a1a1a);
-  color: #f1f1f1;
+  background: #121212;
+  color: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   font-family: 'Segoe UI', sans-serif;
 }
 
 .main {
-  padding: 3rem 1.5rem;
-  text-align: center;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .logo {
-  border-radius: 50%;
-  border: 2px solid #ccc;
+  border-radius: 12px;
+  border: none;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
 }
 
 .title {
-  font-size: 2.75rem;
-  margin-top: 1.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
+  margin-top: 1.2rem;
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  opacity: 0.7;
-  margin: 0.75rem 0 2rem;
+  font-size: 1.1rem;
+  color: #b3b3b3;
+  margin-bottom: 1rem;
 }
 
 .links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .linkBox {
-  background: #1d1d1d;
-  padding: 1.25rem;
-  border-radius: 1rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-align: left;
-  box-shadow: 0 0 10px #00000040;
+  background-color: #181818;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: none;
+  transition: background 0.2s ease;
 }
 
 .linkBox:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 12px #00000080;
+  background-color: #282828;
 }
 
 .label {
   font-weight: 600;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .address {
+  display: inline-block;
   font-family: 'Courier New', monospace;
-  font-size: 0.95rem;
-  background: #111;
-  color: #87e3ff;
-  padding: 0.35rem 0.6rem;
-  border-radius: 0.375rem;
+  font-size: 0.85rem;
+  background: #282828;
+  color: #1ed760;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  margin-top: 0.3rem;
   word-break: break-word;
+  text-decoration: none;
 }
 
 .footer {
   text-align: center;
   padding: 1.5rem 1rem;
-  opacity: 0.5;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #2a2a2a;
 }
 
-/* 공통 섹션 */
 .section {
-  margin-top: 2.5rem;
-  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+  padding: 1.75rem 1.5rem;
+  background-color: #181818;
   border-radius: 12px;
-}
-
-/* 서버 정보 */
-.serverSection {
-  background: #222;
-  border: 1px solid #333;
-  box-shadow: 0 0 10px #00000030;
-}
-
-/* 기술/게임 */
-.infoSection {
-  background: #262626;
-  border: 1px solid #3a3a3a;
+  border: 1px solid #2a2a2a;
 }
 
 .sectionTitle {
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1.25rem;
 }
 
 .subSection {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .subTitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
   color: #e0e0e0;
 }
 
 .techList,
 .gameList {
-  list-style: disc;
-  padding-left: 1.5rem;
-  color: #c0c0c0;
+  list-style: none;
+  padding-left: 1rem;
+  color: #b3b3b3;
+  margin: 0;
+}
+
+.techList li::before,
+.gameList li::before {
+  content: '•';
+  color: #1ed760;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 .description {
   font-size: 0.9rem;
-  color: #aaa;
+  color: #999;
   margin-top: 0.3rem;
+}
+
+.status {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.online {
+  background: #1db95420;
+  color: #1ed760;
+}
+
+.offline {
+  background: #ff2d5520;
+  color: #ff5e7b;
+}
+
+.metrics {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.metricItem {
+  font-size: 0.85rem;
+  background: #282828;
+  color: #1ed760;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
 }
